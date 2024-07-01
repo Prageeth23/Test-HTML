@@ -1,0 +1,130 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    
+    
+}
+button{
+    margin: 1rem;
+}
+.btn{ 
+
+    --background-color: rgb(178, 177, 177);
+    --border-size:2.5px;
+    --accent-color:#0AF;
+
+
+    background-color:var(--background-color);
+    color: #222;
+    padding: .5em 1em;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+   
+}
+/*pop*/
+.btn.pop::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border:var(--border-size) solid var(--background-color);
+    transition: 100ms ease-in-out;
+}
+.btn.pop:hover::before,
+.btn.pop:focus::before{
+    top: calc(var(--border-size) * -2);
+    bottom: calc(var(--border-size) * -2);
+    left: calc(var(--border-size) * -2);
+    right: calc(var(--border-size) * -2);
+}
+/*slide*/
+.btn.slide::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    z-index: -1;
+
+    transition: 300ms;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.btn.slide{
+    transition: color 300ms ease-in-out;
+    z-index: 1;
+}
+.btn.slide:hover::before,
+.btn.slide:focus::before{
+    transform: scaleX(1);
+}
+
+.btn.slide:hover{
+    color: white;
+   
+}
+/*circle*/
+
+.btn.circle::before{
+     content: '';
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     z-index: -1;
+     background-color: var(--background-color);
+     border-radius: 50%;
+
+     transform: scale(1.5);
+     transition: 500ms ease-in-out;
+}
+.btn.circle{
+    z-index: 1;
+    overflow: hidden;
+    background-color:var(--accent-color);
+    transform: color 400ms ease-in-out;
+}
+
+.btn.circle:hover::before,
+.btn.circle:focus::before{
+    transform: scale(0); 
+    
+}
+.btn.circle:hover{
+    color: white;
+}
+
+/*underline*/
+.btn.underline::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--border-size);
+    background-color: var(--accent-color);
+
+    transform: scaleX(0);
+    transition: 300ms ease-in-out;
+}
+.btn.underline:hover::before{
+    transform: scaleX(1);
+}
+
+
+
+
