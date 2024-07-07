@@ -1,0 +1,166 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+:root{
+    --accent-color:#641BFF;
+    --heading-font-family:'Poppins',sans-serif;
+    --body-ofnt-family:
+}
+body{
+    margin: 0;
+    background-color: #F8F9FB;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--body-ofnt-family);
+}
+.price_comparison{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    margin: 1rem;
+}
+.price_colum{
+    background-color: white;
+    box-shadow: 0 7px 30px rgba(52, 31, 97, 0.2);
+    padding: 2rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    border-radius: 8px;
+    max-width: 275px;
+}
+.price_colum.popular{
+    background-color: var(--accent-color);
+    box-shadow: 0 7px 30px rgba(52, 31, 97, 0.5);
+    color: white;
+    margin-top: -1.5rem;
+    padding-top: 3.5rem;
+    margin-bottom: -1.5rem;
+    padding-bottom: 3.5rem;
+    position: relative;
+}
+.price_colum:first-child{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.price_colum:last-child{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.price_header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--heading-font-family);
+    font-weight: bold;
+}
+.price{
+    font-size: 3.5rem;
+    display: flex;
+}
+.dollar_sign{
+    font-size: 1.5rem;
+    margin-right: .1rem;
+    margin-top: .2rem;
+}
+
+.per_month{
+    font-size: .75rem;
+    align-self: flex-end;
+    margin-bottom: .9rem;
+    text-transform: capitalize;
+}
+.palan_name{
+    font-size: .9rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+.divider{
+    height: 1px;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.3);    
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    transition: background-color .150ms;
+}
+
+.price_colum.popular .divider{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.divider:hover{
+    background-color: aqua;
+}
+.price_colum.popular .divider:hover{
+    background-color: aqua;
+}
+.feature{
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-family: var(--heading-font-family);
+    
+}
+.feature ul li{
+    list-style: none;
+}
+.nonactive{
+
+    color:#00000079;
+    text-decoration-line: line-through;
+}
+.feature ul li::before{
+    content:'✔';
+    margin-right: .3rem;
+}
+
+.price_colum.popular .nonactive{
+    color: rgba(255, 255, 255, 0.504);
+}
+
+
+.most-popular{
+    position: absolute;
+    top:2%;
+    right: 3%;
+    text-transform: uppercase;
+    color: #641BFF;
+    background-color: white;
+    padding: 0 .3rem;
+    border-radius: 50px;
+    font-family: var(--heading-font-family);
+    font-weight: 600;
+    border: 2px solid aqua;
+    transition: background-color 150ms;
+}
+.most-popular:hover{
+ background-color:rgb(197, 255, 255) ;
+}
+.buttn{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    width: 100%;
+    padding: .5rem 1rem;
+    font-family: var(--heading-font-family);
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    background-color: #641BFF;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: scale .1s;
+}
+.popular .btn{
+    background-color: white;
+    color: #641BFF;
+}
+.btn:hover{
+    scale: 1.1;
+}
